@@ -84,6 +84,6 @@ output "cloudfront_origin_access_controls_ids" {
 }
 
 output "cloudfront_vpc_origin_ids" {
-  description = "The IDS of the VPC origin created"
-  value       = local.create_vpc_origin ? [for v in aws_cloudfront_vpc_origin.this : v.id] : []
+  description = "The IDs of the VPC origin created"
+  value = local.create_vpc_origin ? [for v in aws_cloudfront_vpc_origin.this : v.id] : []
 }
